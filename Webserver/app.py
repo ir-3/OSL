@@ -45,7 +45,7 @@ def make_session(token=None, state=None, scope=None):
 @app.before_request
 def get_db():
     if "db" not in g:
-        g.db = psycopg2.connect(dbname="osl", user="osl", password="open source listing", host="127.0.0.1")
+        g.db = psycopg2.connect(**config.DATABASE)
         g.db.autocommit = True
 
 
