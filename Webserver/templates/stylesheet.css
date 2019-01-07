@@ -1,0 +1,30 @@
+.button {
+    display: inline-block;
+    position: relative;
+}
+
+* {
+    font-family: "Times New Roman", times, serif;
+}
+
+body {
+    background-color: rgb(114, 137, 218);
+}
+
+h1 {
+    text-align: center;
+}
+
+.main_menu {
+    background-color: #dddddd;
+}
+
+.main_menu li {
+    display: inline;
+    float: left;
+}
+
+.main_menu li a {
+    display: block;
+    padding: 8px;
+}

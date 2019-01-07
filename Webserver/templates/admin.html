@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Open Source Listing</title>
+        <link rel="stylesheet" href="./stylesheet.css">
+    </head>
+    <body>
+        <h2>Welcome, {{ username }}</h2>
+        <h4>Blacklisted users</h4>
+        {% for userid, reason in blacklist %}
+        <p>
+            {{ userid }}: {{ reason }}
+            <a class="button" href="/removefromdb?table=blacklist&column=userid&value={{ userid }}">
+                [Remove]
+            </a>
+        </p>
+        {% else %}
+        <p>Nothing found.</p>
+        {% endfor %}
+    </body>
+</html>

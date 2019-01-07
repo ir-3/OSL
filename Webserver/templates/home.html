@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Welcome, {{ username }}.</p>
+        {% if is_admin %}
+        <a href="/admin">Click here to go to the admin panel.</a>
+        {% endif %}
+    </body>
+</html>
