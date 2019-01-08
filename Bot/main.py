@@ -53,6 +53,7 @@ class OSL(commands.Bot):
             await ctx.invoke(self.get_command("help"), *ctx.command.qualified_name.split(" "))
         else:
             await ctx.send("An error occurred while performing this command.")
+            exc = getattr(exc, "original", exc)
             await self.http.send_message(
                 514884538703282201,
                 ("```ini\n"
@@ -60,7 +61,7 @@ class OSL(commands.Bot):
                  f"Time: {datetime.utcnow().strftime('%m/%d:%y @ %H:%M:%S')}\n"
                  f"Invoker: {ctx.author}\n"
                  f"Channel: #{ctx.channel}\n"
-                 f"Invocation: {ctx.message}\n\n"
+                 f"Invocation: {ctx.message.content}\n\n"
                  "[Exception]\n"
                  f"{''.join(traceback.format_exception(type(exc), exc, exc.__traceback__))}\n"
                  "```")
